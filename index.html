@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Semáforo Digital</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background-image: url('fundo2.jpg'); background-size: cover;">
+  <h1>Semáforo Digital</h1>
+  </br>
+  <div class="semaforo">
+    <div id="luz-vermelho" class="luz"></div> <!--div para cada cor de luz-->
+    <div id="luz-amarelo" class="luz"></div>
+    <div id="luz-verde" class="luz"></div>
+  </div>
+
+  <div class="botoes">
+    <button class="vermelho" onclick="ligarLuz('vermelho')">Vermelho</button> <!--botões para ligar luz-->
+    <button class="amarelo" onclick="ligarLuz('amarelo')">Amarelo</button>
+    <button class="verde" onclick="ligarLuz('verde')">Verde</button>
+  </div>
+  </br>
+  <p class="paragrafo">Pressione um botão para ligar a luz correspondente</p>
+  <script src="script.js"></script>
+</body>
+
+<footer class="rodape">
+  Danny Daniel - 2025
+</footer>
+</html>

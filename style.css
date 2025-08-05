@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap');
+
+:root{
+    --cor-primaria:white;
+    --cor-secundaria: black;
+    --fonte-principal: 'League Spartan', sans-serif;
+}
+
+*{ /* reset */
+    margin:0;
+    padding:0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--fonte-principal);
+  padding: 30px;
+  text-align: center;
+
+  color: var(--cor-primaria);
+    font-size: 20px;
+    text-shadow:
+        -1px -1px 0 var(--cor-secundaria),
+         1px -1px 0 var(--cor-secundaria),
+        -1px  1px 0 var(--cor-secundaria),
+         1px  1px 0 var(--cor-secundaria);
+}
+
+.semaforo {
+  width: 100px; /*largura do semaforo*/
+  height: 260px;/*altura do semaforo*/
+  background-color: var(--cor-secundaria);
+  border-radius: 20px; /*borda do semaforo*/
+  padding: 10px; /*margem interno*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 20px var(--cor-primaria); /*sombra do semaforo*/
+}
+
+.luz {
+  width: 60px;
+  height: 60px;
+  background-color: var(--cor-secundaria);
+  border-radius: 50%; /*borda das lampadas*/
+  transition: background-color 0.3s; /*delay da luz ligar*/
+}
+
+.botoes {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;/*espaçamento entre botões*/
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  color: var(--cor-primaria);
+  font-family: var(--fonte-principal);
+  font-weight: bold;
+  cursor: pointer; /*tipo de cursor ao clicar*/
+}
+.rodape {
+    text-align: center;
+    margin-top: 10%;
+    font-size: 15px;
+    color: var(--cor-primaria);
+    text-shadow: 
+        -1px -1px 0 var(--cor-secundaria),
+         1px -1px 0 var(--cor-secundaria),
+        -1px  1px 0 var(--cor-secundaria),
+         1px  1px 0 var(--cor-secundaria);
+}
+
+.paragrafo {
+    color: var(--cor-primaria);
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 
+        -1px -1px 0 var(--cor-secundaria),
+         1px -1px 0 var(--cor-secundaria),
+        -1px  1px 0 var(--cor-secundaria),
+         1px  1px 0 var(--cor-secundaria);
+}
+
+
+.vermelho { background-color: red; }
+.amarelo  { background-color: orange; }
+.verde    { background-color: green; }
+
+
+@media (max-width: 1200px){
+    
+    .body{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .rodape{
+        width: auto;
+    }
+    .botoes{
+      flex-direction: column;
+    }
+}
