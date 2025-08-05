@@ -19,6 +19,11 @@ body {
   padding: 30px;
   text-align: center;
 
+  background-size: cover; /*cobrir tudo*/
+  background-position: center;
+  background-repeat: no-repeat;   /* não repetir a imagem de fundo */
+  background-attachment: fixed; /*fundo fixado*/
+
   color: var(--cor-primaria);
     font-size: 20px;
     text-shadow:
@@ -96,9 +101,13 @@ button {
 
 @media (max-width: 1200px){
     
-    .body{
-        flex-direction: column-reverse;
+    body{
+        
         padding: 5%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;   /* não repete a imagem */
+        background-attachment: fixed;
     }
     .rodape{
         width: auto;
@@ -106,4 +115,6 @@ button {
     .botoes{
       flex-direction: column;
     }
+
+    
 }
