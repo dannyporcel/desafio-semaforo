@@ -19,6 +19,8 @@ body {
   padding: 30px;
   text-align: center;
 
+  min-height: 100vh;
+
   background-size: cover; /*cobrir tudo*/
   background-position: center;
   background-repeat: no-repeat;   /* não repetir a imagem de fundo */
@@ -51,7 +53,7 @@ body {
   height: 60px;
   background-color: var(--cor-secundaria);
   border-radius: 50%; /*borda das lampadas*/
-  transition: background-color 0.3s; /*delay da luz ligar*/
+  transition: background-color 0.3s; /* transição e delay da luz para ligar em milisegundos*/
 }
 
 .botoes {
@@ -59,7 +61,7 @@ body {
   display: flex;
   gap: 10px;/*espaçamento entre botões*/
 }
-
+/*hover para mudar fundo do botão ao colocar mouse*/
 .vermelho:hover{
   background-color: darkred;
 }
@@ -81,7 +83,10 @@ button {
 }
 .rodape {
     text-align: center;
-    margin-top: 10%;
+    
+    margin-top: auto; /* empurra o rodapé para o final */
+    padding: 40px 0;
+    
     font-size: 15px;
     color: var(--cor-primaria);
     text-shadow: 
@@ -114,16 +119,11 @@ button {
     body{
         padding: 5%;
         background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;   /* não repete a imagem */
+        background-position: center; 
+        background-repeat: no-repeat;   /* não repete a imagem de fundo */
         background-attachment: fixed;
-    }
-    .rodape{
-        width: auto;
     }
     .botoes{
       flex-direction: column;
     }
-
-    
 }
