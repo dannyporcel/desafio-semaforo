@@ -43,7 +43,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 0 20px var(--cor-primaria); /*sombra do semaforo*/
+  box-shadow: 0 0 10px var(--cor-secundaria); /*sombra do semaforo*/
 }
 
 .luz {
@@ -58,6 +58,16 @@ body {
   margin-top: 30px;
   display: flex;
   gap: 10px;/*espaçamento entre botões*/
+}
+
+.vermelho:hover{
+  background-color: darkred;
+}
+.verde:hover{
+  background-color: darkgreen;
+}
+.amarelo:hover{
+  background-color: darkgoldenrod;
 }
 
 button {
