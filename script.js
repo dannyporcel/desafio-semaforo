@@ -46,16 +46,15 @@ function ligarLuz(cor) {
 let cicloAtivo = false; // controle para iniciar/parar o ciclo
 
 function ligarLuzAuto() {
-  if (cicloAtivo) return; // evita múltiplas chamadas simultâneas
-
-  cicloAtivo = true;
+  if (cicloAtivo) return; // evita múltiplas chamadas simultâneas, se estiver true já sai da função
+  cicloAtivo = true; //settado para verdade
 
   function cicloSemaforo() {
-    if (!cicloAtivo) return;
+    if (!cicloAtivo) return; 
 
     ligarLuz('verde');
 
-    setTimeout(() => {
+    setTimeout(() => { /*utilizado função arrow  sintaxe -> setTimeout(funcao, delay, parametros 1, 2,3......)*/ 
       ligarLuz('amarelo');
 
       setTimeout(() => {
@@ -69,7 +68,7 @@ function ligarLuzAuto() {
 
     }, tempoLuz.verde);
   }
-
+///////////////////////////////
   cicloSemaforo(); // inicia o ciclo
 }
 
@@ -79,12 +78,11 @@ function pararLuzAuto() {
   desligarTodas();
 }
 
-
-function alternarSemaforo() {
+function alternarSemaforo() { //função para verificar se checkbox está ligada ou desligada
   const checkbox = document.getElementById('controleSemaforo');
   if (checkbox.checked) {
-    ligarLuzAuto(); // ativa o ciclo
+    ligarLuzAuto(); // ativa o ciclo de Luz Automática
   } else {
-    pararLuzAuto(); // para o ciclo
+    pararLuzAuto(); // para o ciclo de Luz Automática
   }
 }
