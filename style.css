@@ -10,6 +10,9 @@
     margin:0;
     padding:0;
 }
+h1{
+  margin-bottom: auto; /* empurra o rodapé para o final */
+}
 
 body {
   display: flex;
@@ -78,7 +81,7 @@ button {
   border-radius: 5px;
   color: var(--cor-primaria);
   font-family: var(--fonte-principal);
-  font-weight: bold;
+  font-weight: bold;/*tipo de fonte*/
   cursor: pointer; /*tipo de cursor ao clicar*/
 }
 .rodape {
@@ -109,9 +112,11 @@ button {
 }
 
 
+
 .vermelho { background-color: red; }
 .amarelo  { background-color: orange; }
 .verde    { background-color: green; }
+.auto    { background-color: black; }
 
 
 @media (max-width: 1200px){
@@ -126,4 +131,11 @@ button {
     .botoes{
       flex-direction: column;
     }
+}
+
+label {
+  font-size: 16px;
+  display: flex;
+  color: var(--cor-primaria);
+  text-align: center;
 }

@@ -12,6 +12,8 @@ function desligarTodas() {
   document.getElementById('luz-verde').style.backgroundColor = '#333';
 }
 
+
+
 function ligarLuz(cor) {
   // Limpa o temporizador anterior
   if (timeoutAtual) /* se vazio ->null*/
@@ -33,11 +35,56 @@ function ligarLuz(cor) {
   if (luz) { /* se há luz então...*/
     luz.style.backgroundColor = coresVisuais[cor];
 
-    // Definir tempo de desligamento
-    timeoutAtual = setTimeout(() => { /*utilizado função arrow */
-      desligarTodas();
-    }, tempoLuz[cor]); /* depois do tempo aguardado em tempoLuz, será executado desligarTodas() */
+    // Definir tempo de desligamento com função setTimeout
+    setTimeout(() => { /*utilizado função arrow  sintaxe -> setTimeout(funcao, delay, parametros…)*/ 
+      desligarTodas();}// parametro 1 com função anonima
+      , tempoLuz[cor]); /* parametro 2 de tempo/delay */
   }
 
+}
 
+let cicloAtivo = false; // controle para iniciar/parar o ciclo
+
+function ligarLuzAuto() {
+  if (cicloAtivo) return; // evita múltiplas chamadas simultâneas
+
+  cicloAtivo = true;
+
+  function cicloSemaforo() {
+    if (!cicloAtivo) return;
+
+    ligarLuz('verde');
+
+    setTimeout(() => {
+      ligarLuz('amarelo');
+
+      setTimeout(() => {
+        ligarLuz('vermelho');
+
+        setTimeout(() => {
+          cicloSemaforo(); // repete o ciclo com recursão
+        }, tempoLuz.vermelho);
+
+      }, tempoLuz.amarelo);
+
+    }, tempoLuz.verde);
+  }
+
+  cicloSemaforo(); // inicia o ciclo
+}
+
+function pararLuzAuto() {
+  cicloAtivo = false; // ciclo falso para desligar a luz
+  clearTimeout(timeoutAtual); //
+  desligarTodas();
+}
+
+
+function alternarSemaforo() {
+  const checkbox = document.getElementById('controleSemaforo');
+  if (checkbox.checked) {
+    ligarLuzAuto(); // ativa o ciclo
+  } else {
+    pararLuzAuto(); // para o ciclo
+  }
 }
