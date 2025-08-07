@@ -12,8 +12,6 @@ function desligarTodas() {
   document.getElementById('luz-verde').style.backgroundColor = '#333';
 }
 
-
-
 function ligarLuz(cor) {
   // Limpa o temporizador anterior
   if (timeoutAtual) /* se vazio ->null*/
@@ -71,10 +69,9 @@ function ligarLuzAuto() {
 ///////////////////////////////
   cicloSemaforo(); // inicia o ciclo
 }
-
 function pararLuzAuto() {
   cicloAtivo = false; // ciclo falso para desligar a luz
-  clearTimeout(timeoutAtual); //
+  clearTimeout(timeoutAtual); //recebe null
   desligarTodas();
 }
 
